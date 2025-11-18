@@ -1,0 +1,12 @@
+| Category                        | Example Drones | Purpose                                |
+| ------------------------------- | -------------- | -------------------------------------- |
+| **Scout**                       | 1, 18          | Close-range fast movement              |
+| **Heavy**                       | 2, 19          | Armored / Weaponized                   |
+| **Recon**                       | 3, 20          | Stealth intel collection               |
+| **Combat/Attack**               | 4, 5           | Offensive UCAV strikes                 |
+| **Surveillance**                | 6, 7           | Long-duration high-altitude monitoring |
+| **Target/Decoy**                | 8, 9           | Enemy distraction & training           |
+| **Cargo/Logistics**             | 10, 11         | Supply delivery                        |
+| **Kamikaze/Loitering Munition** | 12, 13         | One‑way explosive impact               |
+| **Inspection**                  | 14, 15         | Safety and infrastructure scanning     |
+| **Anti‑Drone**                  | 16, 17         | Drone interception / jamming           |

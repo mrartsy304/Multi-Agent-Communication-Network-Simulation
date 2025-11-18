@@ -1,0 +1,38 @@
+battlefield_drone_squad/
+│
+├── main.py                       # Entry point: starts Command Server + Drone threads
+│
+├── config/
+│   └── settings.py               # Timeouts, heartbeat rate, routing hops, constants
+│
+├── core/
+│   ├── command_server.py         # Central Command logic
+│   ├── mission_manager.py        # Mission assignment + best-drone selection
+│   ├── drone_agent.py            # Drone agent (battery, type, model, etc.)
+│   ├── routing.py                # Multi-hop drone-to-drone routing logic
+│   ├── failures.py               # Disconnects, crashes, range-loss simulation
+│   └── logger.py                 # Unified terminal logging system
+│
+├── network/
+│   ├── message_types.py          # Mission request, heartbeat, accept/decline, relays
+│   ├── packet.py                 # How messages are formed/decoded
+│   └── simulator.py              # Handles simulated wireless network conditions
+│
+├── operators/
+│   └── operator_client.py        # Mission request generator, CLI for human operator
+│
+├── data/
+│   ├── drones.json               # Initial drone list (battery, type, x,y)
+│   └── battlefield_map.json      # Zones, distances, obstacles
+│
+├── graphics/                     # Optional – for map/visualization
+│   ├── ui.py                     # Simple graphical view (optional)
+│   └── assets/                   # Icons, drone markers, map images
+│
+├── tests/
+│   ├── test_routing.py
+│   ├── test_failures.py
+│   ├── test_mission_select.py
+│   └── test_end_to_end.py
+│
+└── README.md                     # How to run the simulation
