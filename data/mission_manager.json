@@ -1,0 +1,26 @@
+[
+  {"manager_id": "M1",  "health": 100, "status": "IDLE", "location": "Falcon Ridge Outpost",         "x": 12,  "y": 5,   "alive": true},
+  {"manager_id": "M2",  "health": 100, "status": "IDLE", "location": "Iron Valley Pass",             "x": -3,  "y": 14,  "alive": true},
+  {"manager_id": "M3",  "health": 100, "status": "IDLE", "location": "Shadowfront Plateau",        "x": 21,  "y": 7,   "alive": true},
+  {"manager_id": "M4",  "health": 100, "status": "IDLE", "location": "Echo Point Observation Zone", "x": 6,   "y": -11, "alive": true},
+
+  {"manager_id": "M5",  "health": 100, "status": "IDLE", "location": "Falcon Ridge Outpost",         "x": 17,  "y": 4,   "alive": true},
+  {"manager_id": "M6",  "health": 100, "status": "IDLE", "location": "Iron Valley Pass",             "x": -10, "y": 9,   "alive": true},
+  {"manager_id": "M7",  "health": 100, "status": "IDLE", "location": "Shadowfront Plateau",        "x": 3,   "y": -5,  "alive": true},
+  {"manager_id": "M8",  "health": 100, "status": "IDLE", "location": "Echo Point Observation Zone", "x": 25,  "y": 12,  "alive": true},
+
+  {"manager_id": "M9",  "health": 100, "status": "IDLE", "location": "Falcon Ridge Outpost",         "x": -6,  "y": 19,  "alive": true},
+  {"manager_id": "M10", "health": 100, "status": "IDLE", "location": "Iron Valley Pass",             "x": 11,  "y": -8,  "alive": true},
+  {"manager_id": "M11", "health": 100, "status": "IDLE", "location": "Shadowfront Plateau",        "x": 9,   "y": 3,   "alive": true},
+  {"manager_id": "M12", "health": 100, "status": "IDLE", "location": "Echo Point Observation Zone", "x": -14, "y": 2,   "alive": true},
+
+  {"manager_id": "M13", "health": 100, "status": "IDLE", "location": "Falcon Ridge Outpost",         "x": 7,   "y": 22,  "alive": true},
+  {"manager_id": "M14", "health": 100, "status": "IDLE", "location": "Iron Valley Pass",             "x": 4,   "y": -13, "alive": true},
+  {"manager_id": "M15", "health": 100, "status": "IDLE", "location": "Shadowfront Plateau",        "x": 13,  "y": 17,  "alive": true},
+  {"manager_id": "M16", "health": 100, "status": "IDLE", "location": "Echo Point Observation Zone", "x": -7,  "y": 6,   "alive": true},
+
+  {"manager_id": "M17", "health": 100, "status": "IDLE", "location": "Falcon Ridge Outpost",         "x": 18,  "y": -4,  "alive": true},
+  {"manager_id": "M18", "health": 100, "status": "IDLE", "location": "Iron Valley Pass",             "x": 10,  "y": 10,  "alive": true},
+  {"manager_id": "M19", "health": 100, "status": "IDLE", "location": "Shadowfront Plateau",        "x": -12, "y": -9,  "alive": true},
+  {"manager_id": "M20", "health": 100, "status": "IDLE", "location": "Echo Point Observation Zone", "x": 23,  "y": 5,   "alive": true}
+]

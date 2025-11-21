@@ -1,0 +1,30 @@
+[
+  {
+    "command_server_id": "CS1",
+    "location": "Falcon Ridge Outpost",
+    "x": 12,
+    "y": 5,
+    "alive": true
+  },
+  {
+    "command_server_id": "CS2",
+    "location": "Iron Valley Pass",
+    "x": -3,
+    "y": 14,
+    "alive": true
+  },
+  {
+    "command_server_id": "CS3",
+    "location": "Shadowfront Plateau",
+    "x": 21,
+    "y": 7,
+    "alive": true
+  },
+  {
+    "command_server_id": "CS4",
+    "location": "Echo Point Observation Zone",
+    "x": 6,
+    "y": -11,
+    "alive": true
+  }
+]

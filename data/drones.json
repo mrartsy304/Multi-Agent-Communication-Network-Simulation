@@ -1,22 +1,26 @@
 [
-    { "id": "Drone_1",  "type": "Scout",          "battery": 100, "x": 0,  "y": 0 },
-    { "id": "Drone_2",  "type": "Heavy",          "battery": 92,  "x": 5,  "y": 1 },
-    { "id": "Drone_3",  "type": "Recon",          "battery": 88,  "x": 2,  "y": 3 },
-    { "id": "Drone_4",  "type": "Combat",         "battery": 95,  "x": 10, "y": 4 },
-    { "id": "Drone_5",  "type": "Combat",         "battery": 83,  "x": 12, "y": 6 },
-    { "id": "Drone_6",  "type": "Surveillance",   "battery": 97,  "x": -3, "y": 8 },
-    { "id": "Drone_7",  "type": "Surveillance",   "battery": 76,  "x": -1, "y": 9 },
-    { "id": "Drone_8",  "type": "Target_Decoy",   "battery": 70,  "x": 7,  "y": -4 },
-    { "id": "Drone_9",  "type": "Target_Decoy",   "battery": 65,  "x": 9,  "y": -2 },
-    { "id": "Drone_10", "type": "Cargo",          "battery": 89,  "x": -5, "y": -6 },
-    { "id": "Drone_11", "type": "Cargo",          "battery": 78,  "x": -7, "y": -3 },
-    { "id": "Drone_12", "type": "Kamikaze",       "battery": 100, "x": 4,  "y": -7 },
-    { "id": "Drone_13", "type": "Kamikaze",       "battery": 100, "x": 6,  "y": -5 },
-    { "id": "Drone_14", "type": "Inspection",     "battery": 90,  "x": -9, "y": 4 },
-    { "id": "Drone_15", "type": "Inspection",     "battery": 85,  "x": -10, "y": 6 },
-    { "id": "Drone_16", "type": "Anti_Drone",     "battery": 93,  "x": 3,  "y": 10 },
-    { "id": "Drone_17", "type": "Anti_Drone",     "battery": 82,  "x": 5,  "y": 9 },
-    { "id": "Drone_18", "type": "Scout",          "battery": 74,  "x": 1,  "y": -9 },
-    { "id": "Drone_19", "type": "Heavy",          "battery": 67,  "x": 13, "y": -1 },
-    { "id": "Drone_20", "type": "Recon",          "battery": 80,  "x": 8,  "y": 3 }
+    { "id": "Drone_1",  "type": "Scout",          "location": "Falcon Ridge Outpost",        "x": 0,  "y": 0 },
+    { "id": "Drone_2",  "type": "Heavy",          "location": "Iron Valley Pass",            "x": 5,  "y": 1 },
+    { "id": "Drone_3",  "type": "Recon",          "location": "Shadowfront Plateau",         "x": 2,  "y": 3 },
+    { "id": "Drone_4",  "type": "Combat",         "location": "Echo Point Observation Zone", "x": 10, "y": 4 },
+
+    { "id": "Drone_5",  "type": "Combat",         "location": "Falcon Ridge Outpost",        "x": 12, "y": 6 },
+    { "id": "Drone_6",  "type": "Surveillance",   "location": "Iron Valley Pass",            "x": -3, "y": 8 },
+    { "id": "Drone_7",  "type": "Surveillance",   "location": "Shadowfront Plateau",         "x": -1, "y": 9 },
+    { "id": "Drone_8",  "type": "Target_Decoy",   "location": "Echo Point Observation Zone", "x": 7,  "y": -4 },
+
+    { "id": "Drone_9",  "type": "Target_Decoy",   "location": "Falcon Ridge Outpost",        "x": 9,  "y": -2 },
+    { "id": "Drone_10", "type": "Cargo",          "location": "Iron Valley Pass",            "x": -5, "y": -6 },
+    { "id": "Drone_11", "type": "Cargo",          "location": "Shadowfront Plateau",         "x": -7, "y": -3 },
+    { "id": "Drone_12", "type": "Kamikaze",       "location": "Echo Point Observation Zone", "x": 4,  "y": -7 },
+
+    { "id": "Drone_13", "type": "Kamikaze",       "location": "Falcon Ridge Outpost",        "x": 6,  "y": -5 },
+    { "id": "Drone_14", "type": "Inspection",     "location": "Iron Valley Pass",            "x": -9, "y": 4 },
+    { "id": "Drone_15", "type": "Inspection",     "location": "Shadowfront Plateau",         "x": -10, "y": 6 },
+    { "id": "Drone_16", "type": "Anti_Drone",     "location": "Echo Point Observation Zone", "x": 3,  "y": 10 },
+
+    { "id": "Drone_17", "type": "Anti_Drone",     "location": "Falcon Ridge Outpost",        "x": 5,  "y": 9 },
+    { "id": "Drone_18", "type": "Scout",          "location": "Iron Valley Pass",            "x": 1,  "y": -9 },
+    { "id": "Drone_19", "type": "Heavy",          "location": "Shadowfront Plateau",         "x": 13, "y": -1 },
+    { "id": "Drone_20", "type": "Recon",          "location": "Echo Point Observation Zone", "x": 8,  "y": 3 }
 ]
