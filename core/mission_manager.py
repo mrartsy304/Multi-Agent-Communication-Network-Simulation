@@ -34,7 +34,6 @@ class MissionManager(threading.Thread):
             elif(self.status == "IDLE"):
                 self.status = "BUSY"
                 time.sleep(15)  # Simulate mission duration
-        
 
     def send_heartbeat(self):
         random_int = random.randint(1, 100)

@@ -22,8 +22,8 @@ class CommandServer(threading.Thread):
         self.inter_message_queue = queue.Queue()
 
     def run(self):
-        self.load_drones_from_json("config/drones.json")
-        self.load_mission_manager_from_json("config/mission_managers.json")
+        self.load_drones_from_json("data/drones.json") #edit
+        self.load_mission_manager_from_json("data/mission_managers.json")
         while self.alive:
             random_mode = random.randint(1, 2) # 1: Inter-entity communication, 2: Intra-server communication
             if(random_mode == 2):

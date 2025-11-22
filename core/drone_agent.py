@@ -29,10 +29,19 @@ class DroneAgent(threading.Thread):
             self.send_heartbeat()
             if(self.status == "BUSY"):
                 self.status = "IDLE"
-                self.send_message()
-                if(not self.incoming_messages.empty()):
-                    message = self.incoming_messages.get()
-                    self.receive_message(message)
+                while True:
+                    random_int = random.randint(1,10)
+                    if random_int % 3 == 0:
+                        self.send_message()
+                    else:
+                        break 
+                while True:
+                    random_int = random.randint(1,10)
+                    if(not self.incoming_messages.empty() and random_int % 2 == 0): 
+                        message = self.incoming_messages.get()
+                        self.receive_message(message)
+                    else:
+                        break
             elif(self.status == "IDLE"):
                 self.status = "BUSY"
                 self.x += random.randint(-5, 5)
