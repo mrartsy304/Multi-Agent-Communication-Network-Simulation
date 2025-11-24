@@ -1,80 +1,62 @@
-.
+<h1 align="center">🚀 Multi-Agent Communication System</h1>
+<p align="center">
+A fully simulated distributed communication network featuring autonomous drones, mission managers, and a command server — built with multithreading, asynchronous message routing, and real-time heartbeat monitoring.
+</p>
 
-🚀 Multi-Agent Communication System
+---
 
-A fully simulated multi-agent communication network featuring autonomous drones, mission managers, and a command server.
-Each entity communicates asynchronously using threads, queues, and a unified message-passing protocol — creating a system that resembles real-world autonomous defense, surveillance, and distributed robotic networks.
+<h2>🛰 Overview</h2>
 
-🛰 Overview
+This project simulates an **autonomous multi-agent system** where drones and mission managers communicate through a centralized routing mechanism.  
+It models real-world distributed robotic networks used in:
 
-This project models how agents (drones + mission managers) interact in a distributed environment:
+- Defense & surveillance  
+- Search & rescue  
+- Autonomous fleet coordination  
+- Distributed sensor networks  
 
-Each agent runs independently using its own execution thread.
+Each agent runs independently on its own thread, communicates via queues, and exchanges structured messages through a routing layer.
 
-Messages are exchanged using an asynchronous queue-based router.
+---
 
-The Command Server controls initialization, routing, and supervision.
+<h2>🧩 Core Components</h2>
 
-Drone health, battery, and heartbeat signals are monitored continuously.
+<h3>1️⃣ Drone Agents</h3>
+- Execute missions  
+- Maintain battery, health, and coordinates  
+- Communicate with drones and mission managers  
+- Send periodic heartbeat signals  
 
-The system architecture is modular, scalable, and suitable for research or simulation of autonomous communication networks.
+<h3>2️⃣ Mission Managers</h3>
+- Assign tasks to drones  
+- Receive drone responses & health updates  
+- Handle mission coordination  
+- Communicate with other managers  
 
-🧩 Core Components
-1. Drone Agents
+<h3>3️⃣ Command Server</h3>
+- Loads configuration files  
+- Initializes all agents  
+- Handles system-level routing  
+- Supports future multi-server scaling  
 
-Execute missions and send status updates.
+<h3>4️⃣ Routing System</h3>
+- Queue-based message exchange  
+- Supports:
+    - Drone → Drone  
+    - Drone → Manager  
+    - Manager → Drone  
+    - Manager → Manager  
+- Handles intra-server and future inter-server routing  
 
-Maintain battery, health, and coordinates.
+<h3>5️⃣ Heartbeat Monitoring</h3>
+- Tracks health of drones and managers  
+- Useful for failure simulation and system diagnostics  
 
-Respond to direct messages from managers or other drones.
+---
 
-Sends heartbeat signals at regular intervals.
+<h2>🏗 Project Structure</h2>
 
-2. Mission Managers
-
-Assign missions to drones.
-
-Monitor drone health and responses.
-
-Communicate with drones and other managers.
-
-Manage mission execution and coordination.
-
-3. Command Server
-
-Loads system configuration from JSON files.
-
-Initializes drones and mission managers.
-
-Controls message routing through the router.
-
-Supports multi-server expansion (future-ready).
-
-4. Message Routing System
-
-Unified message class for all communication types.
-
-Queue-based asynchronous routing.
-
-Supports:
-
-Drone → Drone
-
-Drone → Manager
-
-Manager → Drone
-
-Manager → Manager
-
-Server → Broadcast
-
-5. Heartbeat Monitoring
-
-Vitality tracking of all agents.
-
-Useful for fault detection, failure simulation, and health analysis.
-
-🏗 Project Structure
+```bash
 Multi-Agent-Communication-Network-Simulation/
 │
 ├── main.py
@@ -85,7 +67,7 @@ Multi-Agent-Communication-Network-Simulation/
 │   ├── mission_manager.py
 │   ├── message.py
 │   ├── failures.py
-│   ├── logging.py
+│   ├── logger.py
 │   └── routing.py
 │
 ├── data/
@@ -94,42 +76,43 @@ Multi-Agent-Communication-Network-Simulation/
 │   └── command_server.json
 │
 └── README.md
-
-⚙ Installation
-Clone the Repository
+<h2>⚙ Installation</h2> <h3>1️⃣ Clone the Repository</h3>
+bash
+Copy code
 git clone https://github.com/your-username/Multi-Agent-Communication-Network-Simulation.git
 cd Multi-Agent-Communication-Network-Simulation
-
-Install Required Dependencies
+<h3>2️⃣ Install Dependencies</h3>
+bash
+Copy code
 pip install -r requirements.txt
+<h3>3️⃣ Ensure JSON Configurations Exist</h3>
+<b>drones.json</b>
 
-Ensure Configuration Files Exist
-
-Inside /data:
-
-Example: drones.json
+json
+Copy code
 [
     {"id": "D1", "type": "Surveillance", "x": 0, "y": 0},
     {"id": "D2", "type": "Transport", "x": 5, "y": 5}
 ]
+<b>mission_manager.json</b>
 
-Example: mission_manager.json
+json
+Copy code
 [
     {"id": "M1", "x": 1, "y": 1},
     {"id": "M2", "x": 3, "y": 3}
 ]
-
-▶️ Running the Simulation
-Start the entire system:
+<h2>▶️ Running the Simulation</h2> <h3>Start the Entire System</h3>
+bash
+Copy code
 python main.py
-
-Run individual modules:
+<h3>Run Individual Modules</h3>
+bash
+Copy code
 python core/drone_agent.py
 python core/mission_manager.py
 python core/command_server.py
-
-
-Logs will automatically show:
+Logs will show:
 
 Message flow
 
@@ -137,9 +120,11 @@ Heartbeats
 
 Drone health updates
 
-Mission and status events
+Mission events & status transitions
 
-📡 Communication Flow Diagram
+<h2>📡 Communication Flow Diagram</h2>
+mermaid
+Copy code
 flowchart LR
     CS[Command Server] --> RT[Router]
 
@@ -152,19 +137,17 @@ flowchart LR
     M1 -->|Task Assignment| D1
     D2 -->|Health/Position| M2
     M2 -->|Mission Update| CS
-
-🌟 Key Features
-
+<h2>🌟 Key Features</h2>
 Asynchronous message delivery
 
 Distributed agent execution
 
-Simulated command network
-
 Dynamic mission handling
+
+Unified message protocol
 
 Heartbeat health monitoring
 
-Threaded agent lifecycle
+Thread-based autonomous behavior
 
-JSON-based configuration
+JSON-based system configuration
