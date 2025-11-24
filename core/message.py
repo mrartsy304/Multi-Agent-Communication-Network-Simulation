@@ -17,4 +17,4 @@ class Message:
         self.timestamp = time.time()  # store message creation time
 
     def __str__(self):
-        return f"[{int(self.timestamp)}] {self.sender_id} → {self.receiver_id} | {self.msg_type}: {self.content}"
+        return f"[{int(self.timestamp)}] {self.sender_id} : {self.receiver_id} | {self.msg_type}: {self.content}"

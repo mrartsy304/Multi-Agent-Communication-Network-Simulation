@@ -1,10 +1,10 @@
 import threading
 import time
 import random
-from core.logger import log
-from core.failures import log_failure
+from logger import log
+from failures import log_failure
 import queue
-import message
+from message import Message
 
 class MissionManager(threading.Thread):
     def __init__(self, manager_id, health=100, location="", x=0, y=0):
@@ -34,13 +34,14 @@ class MissionManager(threading.Thread):
             elif(self.status == "IDLE"):
                 self.status = "BUSY"
                 time.sleep(15)  # Simulate mission duration
+        
 
     def send_heartbeat(self):
         random_int = random.randint(1, 100)
         self.health -= random_int % 4   # Decrease health by 0-3
         if self.health <= 0:
             self.status = "DEAD"
-            log_failure(f"[{self.manager_id}] STATUS CHANGE → DEAD")
+            log_failure(f"[{self.manager_id}] STATUS CHANGE : DEAD")
             self.alive = False
         else:    
             self.last_heartbeat = time.time()
@@ -48,13 +49,13 @@ class MissionManager(threading.Thread):
 
     def send_message(self,receiver_id,msg_type,content):
         log(f"[Message] {self.manager_id} sending message...")
-        message = message.Message(
+        msg = Message(
             sender_id=self.manager_id,
             receiver_id=receiver_id, 
             msg_type=msg_type,
             content=content
         )
-        self.outgoing_messages.put(message)
+        self.outgoing_messages.put(msg)
 
     def receive_message(self, message):
         message_text = message.__str__()
