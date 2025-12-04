@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 """
 Routing Module - Implements Link-State Routing Algorithm (OSPF-like)
 
@@ -330,7 +329,6 @@ class Router:
         
         logger.log(f"[Router {self.command_server_id}] Topology synchronized: {len(self.lsdb)} servers in LSDB")
 
-=======
 # routing.py
 import time
 import logger
@@ -400,4 +398,3 @@ class Router:
             msg = self.inter_server_queue.get()
             logger.log(f"[Routing] Inter-server message ready for delivery: {msg}")
             # In real multi-server deployment, code to forward to other servers goes here
->>>>>>> 07777440bcba06cf46e3578a937fa84d267ab94c
