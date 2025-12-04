@@ -14,11 +14,15 @@ in the system. Each manager:
 import threading
 import time
 import random
-from core.logger import log
-from core.failures import log_failure
+from logger import log
+from failures import log_failure
 import queue
+<<<<<<< HEAD
 from core.message import Message
 
+=======
+from message import Message
+>>>>>>> 07777440bcba06cf46e3578a937fa84d267ab94c
 
 class MissionManager(threading.Thread):
     """
@@ -93,8 +97,13 @@ class MissionManager(threading.Thread):
             elif self.status == "IDLE":
                 # Start mission coordination
                 self.status = "BUSY"
+<<<<<<< HEAD
                 # Simulate mission coordination duration
                 time.sleep(self.mission_duration)
+=======
+                time.sleep(15)  # Simulate mission duration
+        
+>>>>>>> 07777440bcba06cf46e3578a937fa84d267ab94c
 
     def send_heartbeat(self):
         """
@@ -112,6 +121,10 @@ class MissionManager(threading.Thread):
         # Check for failure conditions
         if self.health <= 0:
             self.status = "DEAD"
+<<<<<<< HEAD
+=======
+            log_failure(f"[{self.manager_id}] STATUS CHANGE : DEAD")
+>>>>>>> 07777440bcba06cf46e3578a937fa84d267ab94c
             self.alive = False
             log_failure(f"[FAILURE] {self.manager_id} | Status: DEAD | "
                        f"Health: {max(0, self.health)}% | Location: {self.location}")
@@ -122,6 +135,7 @@ class MissionManager(threading.Thread):
                 f"Health: {self.health}% | Location: {self.location} | "
                 f"Position: ({self.x}, {self.y}) | Time: {int(self.last_heartbeat)}")
 
+<<<<<<< HEAD
     def send_message(self, receiver_id, msg_type, content):
         """
         Create and queue a message to be sent to another agent.
@@ -132,6 +146,10 @@ class MissionManager(threading.Thread):
             content: Message content
         """
         log(f"[Message] {self.manager_id} sending message to {receiver_id}...")
+=======
+    def send_message(self,receiver_id,msg_type,content):
+        log(f"[Message] {self.manager_id} sending message...")
+>>>>>>> 07777440bcba06cf46e3578a937fa84d267ab94c
         msg = Message(
             sender_id=self.manager_id,
             receiver_id=receiver_id, 
