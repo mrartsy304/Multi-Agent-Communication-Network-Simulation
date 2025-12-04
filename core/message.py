@@ -37,7 +37,6 @@ class Message:
         self.timestamp = time.time()  # Store message creation time for tracking
 
     def __str__(self):
-<<<<<<< HEAD
         """
         String representation of the message for logging and display.
         
@@ -45,6 +44,3 @@ class Message:
             Formatted string with timestamp, sender, receiver, type, and content
         """
         return f"[{int(self.timestamp)}] {self.sender_id} → {self.receiver_id} | {self.msg_type}: {self.content}"
-=======
-        return f"[{int(self.timestamp)}] {self.sender_id} : {self.receiver_id} | {self.msg_type}: {self.content}"
->>>>>>> 07777440bcba06cf46e3578a937fa84d267ab94c

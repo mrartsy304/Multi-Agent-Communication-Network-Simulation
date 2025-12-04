@@ -14,20 +14,13 @@ Each drone:
 import threading
 import time
 import random
-<<<<<<< HEAD
 from core.logger import log
 from core.failures import log_failure
 from core.message import Message
-=======
-from logger import log
-from failures import log_failure
-from message import Message
->>>>>>> 07777440bcba06cf46e3578a937fa84d267ab94c
 import queue
 
 
 class DroneAgent(threading.Thread):
-<<<<<<< HEAD
     """
     Drone Agent class representing an autonomous drone.
     
@@ -51,11 +44,6 @@ class DroneAgent(threading.Thread):
             health: Initial health level (0-100)
             x, y: Initial coordinates
         """
-=======
-    def __init__(
-        self, drone_id, drone_type, battery=100, location="", health=100, x=0, y=0
-    ):
->>>>>>> 07777440bcba06cf46e3578a937fa84d267ab94c
         super().__init__()
         self.drone_id = drone_id
         self.drone_type = drone_type
@@ -77,13 +65,7 @@ class DroneAgent(threading.Thread):
         
         # Track last heartbeat time
         self.last_heartbeat = time.time()
-<<<<<<< HEAD
 
-=======
-        self.outgoing_messages = queue.Queue()
-        self.incoming_messages = queue.Queue()
-    
->>>>>>> 07777440bcba06cf46e3578a937fa84d267ab94c
     def run(self):
         """
         Main execution loop for the drone agent thread.
@@ -98,7 +80,6 @@ class DroneAgent(threading.Thread):
             # Send heartbeat at regular intervals
             time.sleep(self.heartbeat_interval)
             self.send_heartbeat()
-<<<<<<< HEAD
             
             # State machine: Handle IDLE and BUSY states
             if self.status == "BUSY":
@@ -120,15 +101,6 @@ class DroneAgent(threading.Thread):
                         
             elif self.status == "IDLE":
                 # Start a new mission
-=======
-            if self.status == "BUSY":
-                self.status = "IDLE"
-                self.send_message()
-                if not self.incoming_messages.empty():
-                    message = self.incoming_messages.get()
-                    self.receive_message(message)
-            elif self.status == "IDLE":
->>>>>>> 07777440bcba06cf46e3578a937fa84d267ab94c
                 self.status = "BUSY"
                 
                 # Simulate movement during mission
@@ -149,7 +121,6 @@ class DroneAgent(threading.Thread):
         """
         # Simulate battery and health degradation (increased for quick deaths in demo)
         random_int = random.randint(1, 100)
-<<<<<<< HEAD
         self.battery -= random_int % 15 + 5  # Decrease battery by 5-19% per heartbeat (quick death)
         self.health -= random_int % 10 + 3   # Decrease health by 3-12% per heartbeat (quick death)
         
@@ -181,29 +152,10 @@ class DroneAgent(threading.Thread):
         message = Message(
             sender_id=self.drone_id,  # Fixed: was using manager_id
             receiver_id=receiver_id, 
-=======
-        self.battery -= random_int % 6  # Decrease battery by 0-5%
-        self.health -= random_int % 4  # Decrease health by 0-4%
-        if self.health <= 0 or self.battery <= 0:
-            self.status = "FAILED"
-            log_failure(f"[{self.drone_id}] STATUS CHANGE : FAILED")
-            self.alive = False
-        else:
-            self.last_heartbeat = time.time()
-            log(
-                f"[Heartbeat] {self.drone_id} alive | Drone_Type={self.drone_type} | Battery={self.battery}% | Health={self.health}% | Status={self.status} | Location={self.location} | Position=({self.x},{self.y} | Time={int(self.last_heartbeat)})"
-            )
-
-    def send_message(self, receiver_id, msg_type, content):
-        log(f"[Message] {self.drone_id} sending message...")
-        msg = Message(
-            sender_id=self.drone_id,
-            receiver_id=receiver_id,
->>>>>>> 07777440bcba06cf46e3578a937fa84d267ab94c
             msg_type=msg_type,
-            content=content,
+            content=content
         )
-        self.outgoing_messages.put(msg)
+        self.outgoing_messages.put(message)
 
     def receive_message(self, message):
         """
@@ -214,7 +166,3 @@ class DroneAgent(threading.Thread):
         """
         message_text = message.__str__()
         log(f"[Message] {self.drone_id} received message: {message_text}")
-<<<<<<< HEAD
-=======
-
->>>>>>> 07777440bcba06cf46e3578a937fa84d267ab94c
